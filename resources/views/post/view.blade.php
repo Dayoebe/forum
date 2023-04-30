@@ -25,7 +25,9 @@
                     </p>
                     <div>
                         {!!$post->body!!}
-                    </div>
+                    </div><br><hr><br>
+                    <livewire:upvote-downvote :post="$post"/>
+                     <br>
                    
             <div class="w-full flex pt-6">
                 <div class="w-1/2">
