@@ -4,16 +4,17 @@ namespace App\Filament\Resources\UserResource\Pages;
 
 use App\Filament\Resources\UserResource;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\ViewRecord;
+use Filament\Resources\Pages\EditRecord;
 
-class ViewUser extends ViewRecord
+class EditUser extends EditRecord
 {
     protected static string $resource = UserResource::class;
 
     protected function getActions(): array
     {
         return [
-            Actions\EditAction::make(),
+            Actions\ViewAction::make(),
+            Actions\DeleteAction::make(),
         ];
     }
 }

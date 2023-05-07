@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+//         \App\Models\Post::factory(50)->create();
+
+        /** @var \App\Models\User $adminUser */
         $adminUser = User::factory()->create([
             'email' => 'admin@example.com',
             'name' => 'Admin',
@@ -21,16 +24,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $adminRole = Role::create(['name' => 'admin']);
-        $adminUser -> assignRole($adminRole);
+        $adminUser->assignRole($adminRole);
 
-
-
-
-        //         \App\Models\Post::factory(50)->create();
-
-    //     \App\Models\User::factory()->create([
-    //         'name' => 'Test User',
-    //         'email' => 'test@example.com',
-    //     ]);
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }

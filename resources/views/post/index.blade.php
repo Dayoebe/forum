@@ -1,17 +1,19 @@
-<? 
-/**    @var $posts \Illuminate\Pagination\LengthAwarePaginator */
-?>
-<x-app-layout meta-title="'$category->title' - Category" :meta-description="'Wireless Terminal Forum'" >
+<x-app-layout :meta-title="$category->title . ' - Wireless Terminal '"
+              :meta-description="'Posts filtered by category ' . $category->title">
+    <div class="container mx-auto flex flex-wrap py-6">
 
-<section class="w-full md:w-2/3 flex-col items-center px-3">
+        <!-- Posts Section -->
+        <section class="w-full md:w-2/3  px-3">
+            <div class=" flex flex-col items-center">
+                @foreach($posts as $post)
+                    <x-post-item :post="$post"/>
+                @endforeach
+            </div>
+            {{ $posts->links() }}
+        </section>
 
-    @foreach ($posts as $post)
-    <x-post-item :post="$post"></x-post-item>
-        
-    @endforeach
-   {{$posts->onEachSide(1)->links()}}
+        <!-- Sidebar Section -->
+        <x-sidebar />
 
-</section>
- <x-sidebar />
-
+    </div>
 </x-app-layout>

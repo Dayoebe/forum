@@ -41,10 +41,6 @@ class PostResource extends Resource
                             ->maxLength(2048),
                         Forms\Components\RichEditor::make('body')
                             ->required(),
-                        Forms\Components\TextInput::make('meta_title')
-                            ->maxLength(255),
-                        Forms\Components\Textarea::make('meta_description')
-                            ->maxLength(255),
                         Forms\Components\Toggle::make('active')
                             ->required(),
                         Forms\Components\DateTimePicker::make('published_at'),
@@ -52,6 +48,10 @@ class PostResource extends Resource
 
                 Forms\Components\Card::make()
                     ->schema([
+                        Forms\Components\TextInput::make('meta_title')
+                            ->maxLength(255),
+                        Forms\Components\Textarea::make('meta_description')
+                            ->maxLength(255),
                         Forms\Components\FileUpload::make('thumbnail'),
                         Forms\Components\Select::make('categories')
                             ->multiple()
@@ -73,6 +73,7 @@ class PostResource extends Resource
                     ->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->sortable()
                     ->dateTime(),
             ])
             ->filters([
