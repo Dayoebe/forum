@@ -13,7 +13,11 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
-
+    'mailchimp' => [
+        'key' => env('MAILCHIMP_APIKEY'),
+        'list_id' => env('MAILCHIMP_LIST_ID'),
+    ],
+    
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
 use Faker\Provider\Lorem;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/posts/{post}', [PostController::class, 'view'])->name('post.show');
 
-
+Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
 Route::get('/', [PostController::class, 'home'])->name('home');
 Route::get('/search', [PostController::class, 'search'])->name('search');
 Route::get('/about-us', [SiteController::class, 'about'])->name('about-us');

@@ -338,10 +338,10 @@
                 <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-youtube-square fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-github-square fa-2x"></i></a>
+                <a href="https://github.com/Dayoebe" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-github-square fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-stack-overflow fa-2x"></i></a>
+                <a href="https://stackoverflow.com/users/18967430/adedayo-oyetoke" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-stack-overflow fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
                 <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-pinterest-square fa-2x"></i></a>
@@ -350,7 +350,10 @@
                 <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-instagram-square fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-tiktok fa-2x"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-google fa-2x"></i></a>
+              </li>
+              <li class="mr-6 mb-2">
+                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-whatsapp fa-2x"></i></a>
               </li>
           </ul>  
         </p> 
@@ -376,12 +379,26 @@
   
       <div class="w-full md:w-1/2 lg:w-1/4 mb-4 px-2">
         <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase border-b mb-4">Subscribe to our newsletter</h3>
-        <form class="mt-4 sm:flex" action="#" method="POST">
-          <label for="email-address" class="sr-only">Email address</label>
-          <input type="email" name="email-address" id="email-address" autocomplete="email" required class="w-full px-4 py-3 rounded-md bg-indigo-800 text-gray-100 placeholder-gray-500 focus:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your email">
-          <button type="submit" class="mt-3 sm:mt-0 sm:ml-3 px-4 py-3 rounded-md text-sm font-semibold bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Subscribe</button>
+        <form method="POST" action="{{ route('subscribe') }}" class="mt-4 sm:flex pb-4 mb-2">
+            @csrf
+            <div class="">
+                <label for="email" class="block text-gray-700 font-bold mb-1">Email address</label>
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter your Email" class="bg-white form-input text-indigo-600 rounded-md shadow-sm block w-full @error('email') border-red-500 @enderror">
+                @error('email')
+                    <p class="text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="mt-7">
+                <button type="submit" class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Subscribe</button>
+            </div>
         </form>
-      </div>
+        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase border-b border-t mb-4 py-3">Contact</h3>
+        <ul class="mt-4 space-y-4">
+            <li><a href="mailto:mail@wirelesscs.com" class="block w-auto hover:bg-gray-800 p-2 space-x-2 ml-auto"> Advertise </a> <hr></li>
+            <li><a href="mailto:mail@wirelesscs.com" class="block w-auto hover:bg-gray-800 p-2 space-x-2 ml-auto"> mail@wirelesscs.com </a> <hr></li>
+            <li><a href="tel:+2349030036438" class="block w-auto hover:bg-gray-800 p-2 space-x-2 ml-auto"> 2349030036438 </a> <hr></li>
+        </ul>  
+    </div>
     </div>
   </footer>
    
