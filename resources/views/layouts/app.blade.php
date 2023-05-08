@@ -329,13 +329,13 @@
           <a href="{{route('about-us')}}" class="text-sm font-semibold text-gray-400 tracking-wider uppercase border-b mt-4 mb-4">Follow Us</a>
           <ul class="flex flex-wrap list-none mt-4">
             <li class="mr-6 mb-2">
-              <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-facebook-square fa-2x"></i></a>
+              <a href="https://web.facebook.com/WirelessComputerServices" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-facebook-square fa-2x"></i></a>
             </li>
             <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a href="https://twitter.com/dayoebe" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-twitter-square fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-youtube-square fa-2x"></i></a>
+                <a href="https://www.youtube.com/channel/UC9WC_XRzBaFo47digsuA26Q/" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-youtube-square fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
                 <a href="https://github.com/Dayoebe" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-github-square fa-2x"></i></a>
@@ -344,16 +344,16 @@
                 <a href="https://stackoverflow.com/users/18967430/adedayo-oyetoke" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-stack-overflow fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-pinterest-square fa-2x"></i></a>
+                <a href="https://www.pinterest.com/oyetokeebenezer/" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-pinterest-square fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-instagram-square fa-2x"></i></a>
+                <a href="https://www.instagram.com/oyetoke.ebenezer/" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-instagram-square fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-google fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/dayoebe/" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-linkedin fa-2x"></i></a>
               </li>
               <li class="mr-6 mb-2">
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-whatsapp fa-2x"></i></a>
+                <a href="https://wa.me/+2349030036438" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-whatsapp fa-2x"></i></a>
               </li>
           </ul>  
         </p> 
