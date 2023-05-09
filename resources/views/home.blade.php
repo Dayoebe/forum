@@ -1,10 +1,10 @@
 <x-app-layout meta-title="Wireless CS"
               meta-description="Website of Wireless Computer Services">
-    <div class="container max-w-9xl mx-auto py-6">
+    <div class="container max-w-9xl mx-auto py-3">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <!-- Latest Post -->
             <div class="col-span-2">
-                <h2 class="text-lg sm:text-xl font-bold text-blue-500 uppercase pb-1 border-b-2 border-blue-500 mb-3">
+                <h2 class="text-lg pl-4 sm:text-xl font-bold text-blue-500 uppercase pb-1 border-b-2 border-blue-500 hover:text-yellow-500 mb-3">
                     Latest Post
                 </h2>
 
@@ -15,7 +15,7 @@
 
             <!-- Popular 3 post -->
             <div>
-                <h2 class="text-lg sm:text-xl font-bold text-blue-500 uppercase pb-1 border-b-2 border-blue-500 mb-3">
+                <h2 class="text-lg pl-4 sm:text-xl font-bold text-blue-500 uppercase pb-1 border-b-2 border-blue-500 hover:text-yellow-500 mb-3">
                     Popular Posts
                 </h2>
                 @foreach($popularPosts as $post)
@@ -27,9 +27,9 @@
                             <a href="{{route('view', $post)}}">
                                 <h3 class="text-sm uppercase whitespace-nowrap truncate">{{$post->title}}</h3>
                             </a>
-                            <div class="flex gap-4 mb-2">
+                            <div class="flex gap-4">
                                 @foreach($post->categories as $category)
-                                    <a href="{{route('by-category', $category)}}" class="text-blue-700 hover:text-yellow-500 text-sm font-bold uppercase pb-4">
+                                    <a href="{{route('by-category', $category)}}" class="hover:text-red-500 text-blue-700 text-sm font-bold uppercase border-indigo-500 pb-2">
                                         {{$category->title}}
                                     </a>
                                 @endforeach
@@ -48,7 +48,7 @@
 
         <!-- Recommended posts -->
         <div class="mb-8">
-            <h2 class="text-lg sm:text-xl font-bold text-blue-500 uppercase pb-1 border-b-2 border-blue-500 mb-3">
+            <h2 class="text-lg pl-4 sm:text-xl font-bold text-blue-500 uppercase pb-1 border-b-2 border-blue-500 hover:text-yellow-500 mb-3">
                 Recommended Posts
             </h2>
 
@@ -63,10 +63,10 @@
 
         @foreach($categories as $category)
             <div>
-                <h2 class="text-lg sm:text-xl font-bold text-blue-500 uppercase pb-1 border-b-2 border-blue-500 mb-3">
+                <h2 class="text-lg pl-4 sm:text-xl font-bold text-blue-500 uppercase pb-1 border-b-2 border-blue-500 hover:text-yellow-500 mb-3">
                     Category "{{$category->title}}"
                     <a href="{{route('by-category', $category)}}">
-                        <i class="fas fa-arrow-right"></i>
+                        <i class="fas fa-arrow-right hover:text-red-500"></i>
                     </a>
                 </h2>
 

@@ -1,5 +1,5 @@
 <x-app-layout meta-title="Content Guideline - Wireless Terminal">
-    <div class="container mx-auto py-6">
+    <div class="container mx-auto py-3">
         <div class="flex flex-wrap">
             <!-- Post Section -->
             <section class="w-full md:w-2/3 px-3">
@@ -19,11 +19,6 @@
             </section>
 
             <!-- Sidebar Section -->
-           
-           
-           
-           
-           
             <x-sidebar />
 
         </div>

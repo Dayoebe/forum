@@ -1,14 +1,14 @@
 <x-app-layout :meta-title="$post->meta_title ?: $post->title" :meta-description="$post->meta_description">
-    <div class="flex">
-        <!-- Post Section -->
-        <section class="w-full md:w-2/3 flex flex-col px-3">
-
-            <article class="flex flex-col shadow my-4">
+    <div class="container mx-auto py-3">
+        <div class="flex flex-wrap">
+            <!-- Post Section -->
+            <section class="w-full md:w-2/3 px-3">
+                <article class="flex flex-col shadow my-4">
                 <!-- Article Image -->
                 <a href="#" class="hover:opacity-75">
                     <img src="{{$post->getThumbnail()}}">
                 </a>
-                <div class="bg-white flex flex-col justify-start p-6">
+                <div class="bg-white flex flex-col justify-start py-6 px-2">
                     <div class="flex gap-4">
                         @foreach($post->categories as $category)
                             <a href="{{route('by-category', $category)}}" class="text-blue-700 hover:text-yellow-500 text-sm font-bold uppercase pb-4">
@@ -26,7 +26,6 @@
                     <div>
                         {!! $post->body !!}
                     </div>
-
                     <livewire:upvote-downvote :post="$post"/>
                 </div>
             </article>
