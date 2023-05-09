@@ -326,7 +326,7 @@
         <h2 class="text-sm font-semibold text-gray-400 tracking-wider uppercase border-b mb-4">About Us</h2>
         <p class="text-gray-400 leading-6">
           {!! \App\Models\TextWidget::getContent('about-us-sidebar') !!}
-          <a href="{{route('about-us')}}" class="text-sm font-semibold text-gray-400 tracking-wider uppercase border-b mt-4 mb-4">Follow Us</a>
+          <social class="text-sm font-semibold text-gray-400 tracking-wider uppercase border-b mt-4 mb-4">Follow Us</social>
           <ul class="flex flex-wrap list-none mt-4">
             <li class="mr-6 mb-2">
               <a href="https://web.facebook.com/WirelessComputerServices" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"><i class="fab fa-facebook-square fa-2x"></i></a>
@@ -354,6 +354,9 @@
               </li>
               <li class="mr-6 mb-2">
                 <a href="https://wa.me/+2349030036438" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-whatsapp fa-2x"></i></a>
+              </li>
+              <li class="mr-6 mb-2">
+                <a href="https://t.me/Dayoebe" class="text-gray-400 hover:text-gray-300 transition duration-300 ease-in-out"> <i class="fab fa-telegram fa-2x"></i></a>
               </li>
           </ul>  
         </p> 
