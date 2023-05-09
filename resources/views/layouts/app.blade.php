@@ -23,6 +23,25 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+<!--- Google stuff -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Z80EFLGD1"> </script> 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3911204427206897"
+     crossorigin="anonymous"></script>
+<script> 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Z80EFLGD1');
+</script> 
+<!------------- Google Ads --> 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3911204427206897"
+     crossorigin="anonymous"> </script> 
+     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script>
+
+
+
 </head>
 <body class="bg-gray-50 font-family-karla">
 
