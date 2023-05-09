@@ -19,6 +19,11 @@
             </section>
 
             <!-- Sidebar Section -->
+           
+           
+           
+           
+           
             <x-sidebar />
 
         </div>

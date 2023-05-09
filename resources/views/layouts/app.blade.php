@@ -29,16 +29,16 @@
  
     <!--------- Navbar starts--->
     <nav class="sticky top-0 left-0 right-0 bg-white shadow-lg">
-        <div class="max-w-1xl mx-auto px-4">
+        <div class="max-w-1xl mx-auto px-2">
           <div class="flex justify-between items-center">
                  <!-- Website Logo -->
                  <a href="{{route('home')}}" class="flex items-center py-4 px-2">
                 <!-- <img src="wirelesscs.webp" alt="" class="h-8 w-8 mr-2"> -->
-                <span class="font-bold text-gray-800 uppercase hover:text-gray-700 text-2xl" href="{{route('home')}}">Wireless Terminal</span>
+                <span class="flex-shrink font-bold text-gray-800 uppercase hover:text-gray-700 text-2xl" href="{{route('home')}}">Wireless Terminal</span>
               </a>
               
 
-              <div class="flex items-center space-x-2 ml-auto border rounded">
+              <div class="hidden md:flex items-center space-x-7 ml-auto border rounded">
                 <form method="get" action="{{route('search')}}" class="flex items-center">
                     <input name="q" value="{{request()->get('q')}}" autocomplete type="text" placeholder="Search Anything" class="border border-blue-300 py-2 px-4 rounded">
                     <button class="flex-shrink-0 ml-2">
@@ -94,7 +94,7 @@
             </div>
             
             @auth
-            <div class="flex sm:items-center sm:ml-6 relative">
+            <div class="flex sm:items-center relative">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="dropdown-toggle hover:bg-blue-600 hover:text-white flex items-center rounded py-2 px-4 mx-2 border-t" aria-haspopup="true" aria-expanded="false">
@@ -130,82 +130,83 @@
                 </x-dropdown>
             </div>
           @else
-              <a href="{{route('login')}}"
-                 class="hover:bg-blue-600 hover:text-white rounded py-2 px-4 mx-2">Sign in</a>
-              <a href="{{route('register')}}" class="bg-blue-600 text-white rounded py-2 px-4 mx-2">Sign Up</a>
+          <a href="{{ route('login') }}" class="hover:bg-blue-600 hover:text-white rounded py-2 px-4 mx-2 text-sm sm:py-1 sm:px-2">Sign in</a>
+          <a href="{{ route('register') }}" class="bg-blue-600 text-white rounded py-2 px-4 mx-2 text-sm sm:py-1 sm:px-2">Sign Up</a>          
           @endauth
+          
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+              <svg class="mx-2 w-6 h-6 text-gray-500 hover:text-green-500 "
+              x-show="!showMenu"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button class="outline-none mobile-menu-button">
-                    <svg class="mx-2 w-6 h-6 text-gray-500 hover:text-green-500 "
-                        x-show="!showMenu"
-                        fill="none"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-                </div>
-            </div>
-        </div>
+      </div>
+    </div>
+  </div>
 
 			<!-- mobile menu -->
 			<div class="hidden mobile-menu">
-				<ul class="">
+				<ul class="p-3">
 					<li><a href="{{route('home')}}" class="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</a></li>
-					<li><a href="{{route('about-us')}}" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">About</a></li>
-                    <li>               @auth
-                        <div class="flex md:items-center sm:ml-6">
-                            <x-dropdown align="right" width="48">
-                                <x-slot name="trigger">
-                                    <button
-                                        class="hover:bg-blue-600 hover:text-white flex items-center rounded py-2 px-4 mx-2">
-                                        <div>{{ Auth::user()->name }}</div>
-          
-                                        <div class="ml-1">
-                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd"
-                                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                      clip-rule="evenodd"/>
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </x-slot>
-          
-                                <x-slot name="content">
-                                    <x-dropdown-link :href="route('profile.edit')">
-                                        {{ __('Profile') }}
-                                    </x-dropdown-link>
-          
-                                    <!-- Authentication -->
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-          
-                                        <x-dropdown-link :href="route('logout')"
-                                                         onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                            {{ __('Log Out') }}
-                                        </x-dropdown-link>
-                                    </form>
-                                </x-slot>
-                            </x-dropdown>
-                        </div>
-                    @else
-                        <a href="{{route('login')}}"
-                           class="hover:bg-blue-600 hover:text-white rounded py-2 px-4 mx-2">Sign in</a>
-                        <a href="{{route('register')}}" class="bg-blue-600 text-white rounded py-2 px-4 mx-2">Sign Up</a>
-                    @endauth </li>
-                    <li><form method="get" action="{{route('search')}}">
-                        <input name="q" value="{{request()->get('q')}}"
-                               class="block w-full rounded-md border-0 px-3.5 py-2 t0ext-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 font-medium"
-                               placeholder="Search Anything"/>
+          <li class="dropdown-menu absolute hidden bg-white text-gray rounded w-auto p-2" id="category-dropdown">
+              @foreach($categories as $category)
+                <li><a href="{{route('by-category', $category)}}" class="block w-auto hover:bg-blue-200 p-2 space-x-2 ml-auto">{{$category->title}}</a> <hr></li>
+              @endforeach
+          </li>
+          <li>
+					<li><a href="{{route('about-us')}}" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">About</a></li><hr>
+          <li><a href="{{route('contact-us')}}" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Contact</a></li><hr>
+          <li class="block text-sm px-2 py-4 hover:bg-blue-100 transition duration-300"> 
+            @auth
+              <div class="flex md:items-center sm:ml-6">
+                <x-dropdown align="left" width="48">
+                  <x-slot name="trigger">
+                    <button
+                      class="hover:bg-blue-600 hover:text-white flex items-center rounded py-2 px-4 mx-2">
+                        <div>{{ Auth::user()->name }}</div>
+                          <div class="ml-1">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                              clip-rule="evenodd"/>
+                            </svg>
+                          </div>
+                    </button>
+                  </x-slot>
+                  <x-slot name="content">
+                    <x-dropdown-link :href="route('profile.edit')">
+                      {{ __('Profile') }}
+                    </x-dropdown-link>
+                       <!-- Authentication -->
+                      <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-dropdown-link :href="route('logout')"
+                          onclick="event.preventDefault();
+                          this.closest('form').submit();">
+                          {{ __('Log Out') }}
+                        </x-dropdown-link>
+                      </form>
+                  </x-slot>
+                </x-dropdown>
+              </div>
+              @else
+              <a href="{{route('login')}}" class="hover:bg-blue-600 hover:text-white rounded py-2 px-4 mx-2">Sign in</a>
+              <a href="{{route('register')}}" class="bg-blue-600 text-white rounded py-2 px-4 mx-2">Sign Up</a>
+            @endauth
+          </li><hr>
+          <li><form method="get" action="{{route('search')}}">
+            <input name="q" value="{{request()->get('q')}}" placeholder="Search Anything" class=" mt-3 block w-full rounded-md border-0 px-3.5 py-2 t0ext-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-blue-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 font-medium"/>
                     </form> </li>
 				</ul>
 			</div>
