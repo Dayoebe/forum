@@ -288,7 +288,7 @@
       </div> 
   
       <div class="w-full md:w-1/2 lg:w-1/4 mb-4 px-2">
-        <h2 class="text-sm font-semibold text-gray-400 tracking-wider uppercase border-b mb-4">Popular Posts</h2>
+        <h2 class="text-sm font-semibold text-gray-400 tracking-wider uppercase border-b mb-4">Recent Posts</h2>
         <ul>
                 @foreach ($latestPost as $post)
                 <li><a href="{{route('home', $post) }}" class="block w-auto hover:bg-gray-800 p-2 space-x-2 ml-auto border-b">{{ $post->title }}</a></li>
@@ -324,7 +324,6 @@
         <ul class="mt-4 space-y-4">
             <li><a href="mailto:mail@wirelesscs.com" class="block w-auto hover:bg-gray-800 p-2 space-x-2 ml-auto"> Advertise </a> <hr></li>
             <li><a href="mailto:mail@wirelesscs.com" class="block w-auto hover:bg-gray-800 p-2 space-x-2 ml-auto"> mail@wirelesscs.com </a> <hr></li>
-            <li><a href="tel:+2349030036438" class="block w-auto hover:bg-gray-800 p-2 space-x-2 ml-auto"> 2349030036438 </a> <hr></li>
         </ul>  
     </div>
     </div>
@@ -344,7 +343,7 @@
           <a href="{{route('content-guideline')}}" class="hover:text-white pr-2 hover:bg-gray-900">Content Guideline</a>
         </div> <hr>
         <div class="text-center md:text-left pb-2">
-          <a href="{{route('home')}}" class="uppercase py-2 hover:text-white pr-2 hover:bg-gray-900">&copy; wirelesscs.com</a>
+          <a href="{{route('home')}}" class="uppercase py-2 hover:text-white pr-2 hover:bg-gray-900">&copy; Wireless Computer Services</a>
           <p class="text-lg text-gray-600">{{ \App\Models\TextWidget::getTitle('header') }}</p>
         </div>
       <div class="text-sm md:text-base pb-2 flex flex-inline">

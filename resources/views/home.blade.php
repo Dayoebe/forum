@@ -1,5 +1,5 @@
 <x-app-layout meta-title="Wireless CS"
-              meta-description="Website of Wireless Computer Services">
+              meta-description="Welcome to Wireless Terminal! We are a community of technology enthusiasts and professionals dedicated to sharing knowledge, insights, and experiences related to a broad range of technology topics. Join us today and be a part of our growing community of tech enthusiasts!">
     <div class="container max-w-9xl mx-auto py-3">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <!-- Latest Post -->
@@ -58,6 +58,119 @@
                     @endforeach
             </div>
         </div>
+
+<!-- News -->
+<div class="container mx-auto shadow">
+    <div class="card">
+        @auth
+        <?php
+        $apikey = '4e25dfce191e50e8267092a457c14994';
+        $category = 'technology';
+        $country = '';
+        $url = "https://gnews.io/api/v4/top-headlines?category=$category&lang=en&country=$country&max=100&apikey=$apikey";
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $data = json_decode(curl_exec($ch), true);
+        curl_close($ch);
+        $articles = $data['articles'];
+        ?>
+
+        @foreach ($articles as $article)
+        <div class="card-body">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/2 md:pr-4">
+                    @if (isset($article['image']) && !empty($article['image']))
+                    <img src="{{ $article['image'] }}" class="h-64 w-full object-cover rounded-md" alt="News Image">
+                    @endif
+                </div>
+                <div class="w-full md:w-1/2 mt-4 md:mt-0 hover:bg-blue-100 hover:border">
+                    <h2 class="text-3xl font-bold hover:bg-gray-100 p-2 rounded-md"><strong>{{ $article['title'] }}</strong></h2>
+                    <h5 class="text-primary">{{ $article['description'] }}</h5>
+                    <p>{{ $article['content'] }}</p>
+                    <hr class="my-4 border-t-2 border-gray-300">
+                    <strong class="text-blue-600 hover:text-red-500"><a href="{{ $article['url'] }}" target="_blank">{{ $article['source']['name'] }}</a></strong><br>
+                    <em class="text-green-500">{{ $article['publishedAt'] }}</em><br>
+                </div>
+            </div>
+            <hr class="my-4 border-t-2 border-gray-300">
+        </div>
+        @endforeach
+
+        @else
+        <p><!--- You need to be authenticated to view this content. --> </p>
+        @endauth
+    </div>
+</div>
+<!----
+    
+    
+//    <?php
+//use GeoIp2\Database\Reader;
+
+// Check if user is authenticated
+// if (isset($_SESSION['user_id'])) {
+    // Load GeoIP2 database
+//    $databaseFile = '/path/to/GeoLite2-Country.mmdb'; // Replace with your actual database file path
+//    $reader = new Reader($databaseFile);
+
+    // Get user's IP address
+//    $userIp = $_SERVER['REMOTE_ADDR'];
+
+    // Get user's country code
+//    try {
+//        $record = $reader->country($userIp);
+//        $country = $record->country->isoCode;
+//    } catch (Exception $e) {
+//        $country = '';
+//    }
+
+//    $apikey = '4e25dfce191e50e8267092a457c14994';
+//    $category = 'technology';
+//    $url = "https://gnews.io/api/v4/top-headlines?category=$category&lang=en&country=$country&max=100&apikey=$apikey";
+
+    // Make API request
+//    $ch = curl_init();
+//    curl_setopt($ch, CURLOPT_URL, $url);
+//    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//    $data = json_decode(curl_exec($ch), true);
+//    curl_close($ch);
+
+//    $articles = $data['articles'];
+
+//    foreach ($articles as $article) {
+        // Display article
+//    }
+//} else {
+//    echo "<p>You need to be authenticated to view this content.</p>";
+//}
+// ?>
+
+    
+    ---->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- Latest Categories -->
 
