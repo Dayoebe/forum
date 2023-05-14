@@ -1,4 +1,4 @@
-<x-app-layout meta-title="Wireless CS"
+<x-app-layout meta-title="Wireless Terminal"
               meta-description="Welcome to Wireless Terminal! We are a community of technology enthusiasts and professionals dedicated to sharing knowledge, insights, and experiences related to a broad range of technology topics. Join us today and be a part of our growing community of tech enthusiasts!">
     <div class="container max-w-9xl mx-auto py-3">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
