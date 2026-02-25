@@ -8,17 +8,24 @@ use Filament\Facades\Filament;
 use Filament\Navigation\NavigationItem;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Throwable;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        // Latest post
-        $latestPost = Post::where('active', '=', 1)
-            ->whereDate('published_at', '<', Carbon::now())
-            ->orderBy('published_at', 'desc')
-            ->limit(5)
-            ->get(['id', 'title']);
+        $latestPost = collect();
+
+        try {
+            // Latest post
+            $latestPost = Post::where('active', '=', 1)
+                ->whereDate('published_at', '<', Carbon::now())
+                ->orderBy('published_at', 'desc')
+                ->limit(5)
+                ->get(['id', 'title']);
+        } catch (Throwable $exception) {
+            // During first-time setup the database may not be ready yet.
+        }
             
         // Share latest post data to all views
         View::share('latestPost', $latestPost);

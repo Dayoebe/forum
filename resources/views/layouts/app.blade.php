@@ -11,10 +11,6 @@
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
     </style>
 
-<link rel="stylesheet" href="{{ mix('css/app.css') }}">
-<script src="{{ mix('js/app.js') }}" defer></script>
-
-
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
             integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
@@ -335,7 +331,8 @@
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div class="flex flex-wrap justify-center md:justify-end space-x-2 mt-4 pb-2 md:mt-0">
           <a href="{{route('home')}}" class="hover:text-white pr-2 hover:bg-gray-900 border-r">Home</a>
-          <a href="{{route('by-category', $category)}}" class="hover:text-white pr-2 hover:bg-gray-900 border-r">Category</a>
+          @php($footerCategory = $categories->first())
+          <a href="{{ $footerCategory ? route('by-category', $footerCategory) : route('home') }}" class="hover:text-white pr-2 hover:bg-gray-900 border-r">Category</a>
           <a href="{{route('about-us')}}" class="hover:text-white pr-2 hover:bg-gray-900 border-r">About</a>
           <a href="{{route('contact-us')}}" class="hover:text-white pr-2 hover:bg-gray-900 border-r">Contact</a>
           <a href="{{route('privacy-policy')}}" class="hover:text-white pr-2 hover:bg-gray-900 border-r">Privacy Policy</a>
